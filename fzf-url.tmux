@@ -16,4 +16,4 @@ tmux_get() {
 
 key="$(tmux_get '@fzf-url-bind' 'u')"
 
-tmux bind-key "$key" run -b "$SCRIPT_DIR/fzf-url.sh";
+tmux bind-key "$key" run -b "$SCRIPT_DIR/fzf-url.rb";
