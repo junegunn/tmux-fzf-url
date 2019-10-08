@@ -57,7 +57,7 @@ if selected.first == 'ctrl-y'
                       'xsel --clipboard --input',
                       'xclip -selection clipboard')
   halt 'No command to control clipboard with' unless copier
-  with('reattach-to-user-namespace pbcopy') do
+  with(copier) do
     print selected.drop(1).join($RS).strip
   end
   halt 'Copied to clipboard'
