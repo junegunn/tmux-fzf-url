@@ -11,6 +11,9 @@ Prerequisites
 - [fzf][fzf]
     - `fzf-tmux` should be on `$PATH`
 
+[tmux]: https://github.com/tmux/tmux
+[fzf]: https://github.com/junegunn/fzf
+
 Installation
 ------------
 
@@ -19,7 +22,7 @@ Installation
 Add this line to your tmux config file, then hit `prefix + I`:
 
 ```sh
-set -g @plugin 'junegunn/tmux-fzf-maccy'
+set -g @plugin 'junegunn/tmux-fzf-url'
 ```
 
 Usage
@@ -45,6 +48,6 @@ set -g @fzf-url-layout '-p70%'
 ```
 The MIT License (MIT)
 
-Copyright (c) 2019 Junegunn Choi
+Copyright (c) 2021 Junegunn Choi
 Copyright (c) 2018 Wenxuan Zhang
 ```
