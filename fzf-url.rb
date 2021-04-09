@@ -45,7 +45,8 @@ urls = lines.each_line.map(&:strip).reject(&:empty?)
 halt 'No URLs found' if urls.empty?
 
 header = Shellwords.escape('Press CTRL-Y to copy URL to clipboard')
-selected = with("fzf-tmux -d 35% -m --expect ctrl-y --header #{header}") do
+layout = ARGV.fetch(0, '')
+selected = with("fzf-tmux #{layout} -m --expect ctrl-y --header #{header}") do
   puts urls
 end
 exit if selected.length < 2
