@@ -36,7 +36,7 @@ end
 
 # TODO: Keep it simple for now
 def extract_urls(line)
-  line.scan(%r{(?:https?|file)://[-a-zA-Z0-9@:%_+.~#?&/=]+[-a-zA-Z0-9@%_+.~#?&/=]+}x)
+  line.scan(%r{(?:https?|file)://[-a-zA-Z0-9@:%_+.~#?&/=]+[-a-zA-Z0-9@%_+.~#?&/=!]+}x)
 end
 
 lines = `tmux capture-pane -J -p -S -99999`
