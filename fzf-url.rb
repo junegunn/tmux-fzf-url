@@ -44,7 +44,7 @@ halt 'No URLs found' if urls.empty?
 
 max_width, max_height = `tmux display-message -p "\#{client_width} \#{client_height}"`.split.map(&:to_i)
 header = 'Press CTRL-Y to copy URL to clipboard'
-width = [[*urls, header].map(&:length).max + 6, max_width].min
+width = [[*urls, header].map(&:length).max + 7, max_width].min
 height = [urls.length + 5, max_height].min
 opts = ['--tmux', "#{width},#{height}", '--multi', '--no-margin', '--no-padding', '--wrap',
         '--expect', 'ctrl-y',
