@@ -1,15 +1,13 @@
 tmux-fzf-url
 ============
 
-Fork of [wfxr/tmux-fzf-url](https://github.com/wfxr/tmux-fzf-url).
+Open URLs in the current pane with fzf.
 
 Prerequisites
 -------------
 
-- [tmux][tmux]
-    - Popup window is used if you have tmux 3.2 or above
-- [fzf][fzf]
-    - `fzf-tmux` should be on `$PATH`
+- [tmux][tmux] 3.3+ for popup support
+- [fzf][fzf] 0.53.0+ for `--tmux` option
 
 [tmux]: https://github.com/tmux/tmux
 [fzf]: https://github.com/junegunn/fzf
@@ -36,11 +34,14 @@ Customization
 ```sh
 # Bind-key (default: 'u')
 set -g @fzf-url-bind 'u'
-
-# fzf-tmux layout (default: '-p70%' on tmux 3.2, '-d' otherwise)
-#   (-p requires tmux 3.2 or above, see `man fzf-tmux` for available options)
-set -g @fzf-url-layout '-p70%'
 ```
+
+Acknowledgement
+---------------
+
+This project is a fork of
+[wfxr/tmux-fzf-url](https://github.com/wfxr/tmux-fzf-url). However, most of
+the code was completely rewritten.
 
 [License](LICENSE.txt)
 ----------------------
