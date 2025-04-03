@@ -44,11 +44,12 @@ halt 'No URLs found' if urls.empty?
 
 header = 'Press CTRL-Y to copy URL to clipboard'
 max_size = `tmux display-message -p "\#{client_width} \#{client_height}"`.split.map(&:to_i)
-size = [[*urls, header].map(&:length).max + 7, urls.length + 5].zip(max_size).map(&:min).join(',')
+size = [[*urls, header].map(&:length).max + 2 + 4 + 2, urls.length + 5 + 1 + 1].zip(max_size).map(&:min).join(',')
 opts = ['--tmux', size, '--multi', '--no-margin', '--no-padding', '--wrap',
-        '--expect', 'ctrl-y',
-        '--header', header,
+        '--expect', 'ctrl-y', '--style', 'default',
+        '--header', header, '--header-border', 'top',
         '--highlight-line', '--header-first', '--info', 'inline-right',
+        '--padding', '1,1,0,1',
         '--border-label', ' URLs '].map(&:shellescape).join(' ')
 selected = with("fzf #{opts}") do
   puts urls
