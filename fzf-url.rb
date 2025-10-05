@@ -60,6 +60,7 @@ if selected.first == 'ctrl-y'
   # https://superuser.com/questions/288320/whats-like-osxs-pbcopy-for-linux
   copier = executable('reattach-to-user-namespace pbcopy',
                       'pbcopy',
+                      'wl-copy',
                       'xsel --clipboard --input',
                       'xclip -selection clipboard')
   halt 'No command to control clipboard with' unless copier
