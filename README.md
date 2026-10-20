@@ -4,6 +4,13 @@ tmux-fzf-url
 Search the current tmux pane for URLs, use fzf to select one, and either
 open it or copy it to the system clipboard.
 
+> [!TIP]
+> [tmux-fzf-complete][complete] does this as well, and also finds hyperlinks
+> and URLs broken across lines. Set `@fzf-complete-url-bind` to `u` to open
+> URLs with <kbd>PREFIX</kbd><kbd>u</kbd>, as this plugin does.
+
+[complete]: https://github.com/junegunn/tmux-fzf-complete
+
 Prerequisites
 -------------
 
